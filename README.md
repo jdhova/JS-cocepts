@@ -843,7 +843,8 @@ console.log(person2) // Grace
 const person1 = {
   name: 'Grace',
   age: 22,
-  sex: 'female'
+  sex: 'female',
+  family:['Juud','ik']
 }
 
 const person2 = person1
@@ -852,6 +853,17 @@ person2.age = 20
 
 console.log(person1) // { name: 'Grace', age: 20, sex: 'female' }
 console.log(person2) // { name: 'Grace', age: 20, sex: 'female' }
+
+if we add
+
+person3 = Object.assign({},person1)  we can mutate the age
+console.log(person3) // { name: 'Grace', age: 23, sex: 'female' }
+
+person3.family.push('dan')
+
+console.log(person2) // { name: 'Grace', age: 20, sex: 'female',family: [ 'Juud', 'ik', ['dan'], }
+
+console.log(person2) // { name: 'Grace', age: 23, sex: 'female',family: [ 'Juud', 'ik', ['dan'], }
 
 
 ```
