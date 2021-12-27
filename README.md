@@ -819,63 +819,40 @@ console.log(name) { first: 'Mike', last: 'cole' }
 
 ```
 
-### Relationship by Value ** c cannot over-writes d **.
+### Relationship by Primitive Value ** person2 cannot over-writes person1 **.
+
+#### Immutable reason every new variable gets a new address in call stack
 
 ```
-let a = 'Juud'
-let b
-b=a
-console.log(a) // 'Juud'
-console.log(b) // 'Juud''
+let person1 = 'Grace'
 
-let c = {
-name:'Grace',
-sex:'female',
-age: 21
-}
+let person2 = person1
 
-let d
+person1 = 'Jude'
 
-d=c
-
-let c = {
-name:'Grace',
-age: 20
-}
-
-console.log(c) {
-name:'Grace',
-age: 20
-}
-console.log(d) {
-name:'Grace',
-sex:'female',
-age: 21
-}
-```
-
-### Relatiosnhip by Refrence which allows you mutate an object value pairs on the fly ** x over writes y **.
+console.log(person1). // Jude
+console.log(person2) // Grace
 
 ```
-let x = {
-    name:'Juud',
-    sex: 'male',
-    age: 24
+
+### Relatiosnhip by Refrence Value which allows you mutate an object value pairs on the fly ** person2 over writes person2 **.
+
+#### Mutable
+
+```
+const person1 = {
+  name: 'Grace',
+  age: 22,
+  sex: 'female'
 }
 
-let y
+const person2 = person1
 
-y = x
+person2.age = 20
 
-x.name = 'grace'
-x.sex = 'female'
-x.age = 22
+console.log(person1) // { name: 'Grace', age: 20, sex: 'female' }
+console.log(person2) // { name: 'Grace', age: 20, sex: 'female' }
 
-console.log(x)
-{ name: 'grace', sex: 'female', age: 22 }
-
-console.log(y)
-{ name: 'grace', sex: 'female', age: 22 }
 
 ```
 
