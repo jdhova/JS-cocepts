@@ -626,58 +626,6 @@ grace.duty4 // travel
 
 ```
 
-## Execution Contest and Global Execution Contest.
-
-#### Code in the Global Contest executes first and then put in a stack before the Execution contect in the function is run.
-
-```
-const b = () => {
-  let x;
-  console.log(x);
-  ///Execution Contest
-};
-
-const a = () => {
-  let x = 2;
-  console.log(x);
-  b();
-  //Execution Contest
-};
-
-
-//Global Execution Contest.
-
-let x = 1;
-console.log(x);
-x = 2
-a();
-console.log(x);
-
-```
-
-### In Scoping the Variable automatically takes the Global context if varaible is not assigned within the "Scope of the particular function"..
-
-```
-const b = () => {
-  console.log('3rd call=3',x)
-  // global scope
-}
-
-const a = () => {
-  let x = 20
-  console.log('sec call = 20',x)
-  b()
-  console.log('last call =20',x)
-  // function scope
-}
-
-let x = 3
-console.log(x,'first call =3')
-a()
-// global context
-
-```
-
 ### An objerct is also known as a collection of key value pairs.."collection of variables"...
 
 ### Symbol variable **_ still new_**
@@ -701,6 +649,101 @@ console.log(a)
 const a = 3+2
 console.log(a)
 // 5
+
+```
+
+### Nesting Objects in Objects...
+
+```
+const person = {
+  firstname:'Juud',
+   lasttname:'Grace',
+   sex:'female',
+   address :{
+     main:'222 killon Blvd Humber',
+     street:{
+
+       previousstreet:'12 killon Blvd Humber',
+       currentstreet: '20 Jameson Blvd Humber',
+
+     },
+     city: 'Humber', surburb :{
+        town: 'North Humber'
+     },
+     state: 'Toronto',
+   }
+}
+
+console.log(person)
+
+```
+
+### Functions as Objects...
+
+```
+const name = () => {
+  console.log('ddd')
+}
+
+name.first = 'Mike'
+name.last = 'cole'
+
+console.log(name.first) 'Mike'
+console.log(name.last) 'cole'
+console.log(name) { first: 'Mike', last: 'cole' }
+
+```
+
+## HOW JS WORKS UNDER THE HOOD
+
+### Execution Contest and Global Execution Contest.
+
+#### Code in the Global Execution Contest. executes first and then put in a stack before the Execution contect in the function is run.
+
+```
+const thirdTask = () => {
+  let y = 'BreakFast'
+  console.log(y,'is third task');
+  ///Execution Contest
+};
+
+const secondTask = () => {
+  let x = 'Take a shower';
+  console.log(x, 'is 2nd task');
+  thirdTask();
+  //Execution Contest
+};
+
+
+//Global Execution Contest.
+
+let firstTask = 'Wake up is';
+console.log(firstTask, 'First Task');
+secondTask();
+
+
+```
+
+### In Scoping the Variable automatically takes the Global context if varaible is not assigned within the "Scope of the particular function"..
+
+```
+const b = () => {
+  console.log('3rd call=3',x)
+  // global scope
+}
+
+const a = () => {
+  let x = 20
+  console.log('sec call = 20',x)
+  b()
+  console.log('last call =20',x)
+  // function scope
+}
+
+let x = 3
+console.log(x,'first call =3')
+a()
+// global context
 
 ```
 
@@ -774,48 +817,6 @@ const info=(name) => {
 
 info('Juud')
 info()
-
-```
-
-### Nesting Objects in Objects...
-
-```
-const person = {
-  firstname:'Juud',
-   lasttname:'Grace',
-   sex:'female',
-   address :{
-     main:'222 killon Blvd Humber',
-     street:{
-
-       previousstreet:'12 killon Blvd Humber',
-       currentstreet: '20 Jameson Blvd Humber',
-
-     },
-     city: 'Humber', surburb :{
-        town: 'North Humber'
-     },
-     state: 'Toronto',
-   }
-}
-
-console.log(person)
-
-```
-
-### Functions as Objects...
-
-```
-const name = () => {
-  console.log('ddd')
-}
-
-name.first = 'Mike'
-name.last = 'cole'
-
-console.log(name.first) 'Mike'
-console.log(name.last) 'cole'
-console.log(name) { first: 'Mike', last: 'cole' }
 
 ```
 
