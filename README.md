@@ -718,36 +718,56 @@ const secondTask = () => {
 //Global Execution Contest.
 
 let firstTask = 'Wake up is';
-console.log(firstTask, 'First Task');
+console.log(firstTask, ' is First Task');
 secondTask();
-
 
 ```
 
 ### In Scoping the Variable automatically takes the Global context if varaible is not assigned within the "Scope of the particular function"..
 
-```
-const b = () => {
-  console.log('3rd call=3',x)
-  // global scope
-}
-
-const a = () => {
-  let x = 20
-  console.log('sec call = 20',x)
-  b()
-  console.log('last call =20',x)
-  // function scope
-}
-
-let x = 3
-console.log(x,'first call =3')
-a()
-// global context
+#### Global Scope variables can be access from anywhere
 
 ```
 
-### BODMAS in JS
+let firstStask = 'Wake up'
+let secondStask = 'Take Shower'
+let thirdTask = 'prepare Breakfast'
+```
+
+#### Function Scope variables can not be accessed outside the function under strict mode.
+
+```
+// Function Scope
+// Variable can only be accessed inside function
+
+const routine = () => {
+  let firstStask = 'Wake up'
+  let secondStask = 'Take Shower'
+  let thirdTask = 'prepare Breakfast'
+
+}
+  console.log(firstStask) // error
+routine()
+
+```
+
+#### Block Scope ES6 let and const can not be accessed outside the code block under strict mode.
+
+```
+const awake = true
+if (awake === true) {
+const firstStask = 'Wake up'
+const secondStask = 'Take Shower'
+const thirdTask = 'prepare Breakfast'
+//console.log(firstStask)
+}
+
+//console.log(firstStask) // error under strict mode
+```
+
+### HOUSTING IN JS...
+
+### BODMAS in JS...
 
 #### https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
