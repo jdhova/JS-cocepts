@@ -923,6 +923,8 @@ console.log(person2) // { name: 'Grace', age: 23, sex: 'female',family: [ 'Juud'
 
 ##### In closures the outer function has access to the values produced by the inner function..
 
+#### function have access to the parent function. \*\*\* function scope
+
 ```
 const person = (sex) => {
 
