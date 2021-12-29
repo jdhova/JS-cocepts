@@ -729,8 +729,8 @@ secondTask();
 
 ```
 
-let firstStask = 'Wake up'
-let secondStask = 'Take Shower'
+let firstTask = 'Wake up'
+let secondTask = 'Take Shower'
 let thirdTask = 'prepare Breakfast'
 ```
 
@@ -741,12 +741,12 @@ let thirdTask = 'prepare Breakfast'
 // Variable can only be accessed inside function
 
 const routine = () => {
-  let firstStask = 'Wake up'
-  let secondStask = 'Take Shower'
+  let firstTask = 'Wake up'
+  let secondTask = 'Take Shower'
   let thirdTask = 'prepare Breakfast'
 
 }
-  console.log(firstStask) // error
+  console.log(firstTask) // error
 routine()
 
 ```
@@ -756,16 +756,46 @@ routine()
 ```
 const awake = true
 if (awake === true) {
-const firstStask = 'Wake up'
-const secondStask = 'Take Shower'
+const firstTask = 'Wake up'
+const secondTask = 'Take Shower'
 const thirdTask = 'prepare Breakfast'
-//console.log(firstStask)
+//console.log(firstTask)
 }
 
-//console.log(firstStask) // error under strict mode
+//console.log(firstTask) // error under strict mode
 ```
 
 ### HOUSTING IN JS...
+
+#### let and const can not be accessed before initialization
+
+#### var can be accessed but returns undefined
+
+```
+ console.log(firstStask)
+ var firstTask = 'Wake up'  // returns undefined
+
+
+//  console.log(firstStask)
+//   let  firstTask = 'Wake up'  // returns error
+
+```
+
+#### Function Declaration can be called before it is declared
+
+#### Arrow functions can not be called before its declared
+
+```
+  firstTask()
+   // function firstTask () {
+    //  console.log('wake up')
+    // }
+
+  firstTask()
+  const firstTask = () => console.log('wake up')
+  // gives an error
+
+```
 
 ### BODMAS in JS...
 
