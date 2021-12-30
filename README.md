@@ -174,7 +174,7 @@ console.log(i)  // 3
 
 ```
 
-```s
+```
 names.forEach((e,i,r) =>  {
 console.log(`${e} is at index,${i}`,r)
 
@@ -241,6 +241,47 @@ const numbers = [50,50, 10,10,10,10,10,175];
 numbers.reduceRight((v,a) =>{
 return a-v // 25
 })
+
+```
+
+### Destructing in Arrays
+
+#### We can destructure and take out specific Variables from an Object or Array and assign to Varaibles.
+
+```
+
+const person = {
+  name:'Juud Hova',
+  address: '12 Thonkliffe Dr',
+  city: 'Toronto',
+  family:['Ego Oyibo','Muna','Don'],
+  cars:['ferarri','Lexus','Benz','BMW'],
+
+  party : function(car,wife){
+    return [this.cars[car], this.family[wife]]
+  }
+
+}
+
+let [a,b] = person.cars
+let [c, ,d] = person.family
+console.log(a,b) //ferarri Lexus
+console.log(c,d) //Ego Oyibo don
+
+const [car,wife] = (person.party(0,0))
+
+console.log(`I am taking ${wife} out in my ${car}`)
+
+
+```
+
+#### Destructing in Nested rray
+
+```
+
+const num = [1,2,3,[4,5,6]]
+const [x, , ,[y,z]] = num
+console.log(x,y,z)
 
 ```
 
