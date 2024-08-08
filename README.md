@@ -806,7 +806,7 @@ const thirdTask = 'prepare Breakfast'
 //console.log(firstTask) // error under strict mode
 ```
 
-### HOUSTING IN JS...
+### Hoisting IN JS...
 
 #### let and const can not be accessed before initialization
 
